@@ -2,11 +2,11 @@
 
 ## Week 1 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **9** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site]([ADD_LINK_HERE](https://maikyh.github.io/Flixter/))
 
 ### Application Features
 
