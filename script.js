@@ -26,7 +26,8 @@ async function fetchMovies() {
         const response = await fetch(url);
         const data = await response.json();
         const movies = data.results;
-
+        console.log(movies);
+        
         movies.forEach(movie => {
             movieGrid.innerHTML += 
             `
@@ -35,9 +36,47 @@ async function fetchMovies() {
                 <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-100 movie-poster">
                 <p class="text-white my-2 text-center movie-votes">Votes: ${movie.vote_average} ⭐️</p>
             </div>
-            `
+            `;
         });
-
+          
+        const movieCards = document.querySelectorAll('.movie-card');
+        
+        movieCards.forEach(movieCard => {
+            const moviePoster = movieCard.querySelector('.movie-poster');
+            moviePoster.addEventListener('click', () => {
+                const movieTitle = movieCard.querySelector('.movie-title').textContent;
+            
+                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+            
+                if (clickedMovie) {
+                    const popupContent = `
+                        <h2 class="popup-title">${movieTitle}</h2>
+                        <p class="popup-overview">${clickedMovie.overview}</p>
+                    `;
+                    
+                    const popup = document.createElement('div');
+                    popup.className = 'popup';
+                    popup.innerHTML = popupContent;
+                    
+                    const popupContainer = document.createElement('div');
+                    popupContainer.className = 'popup-container';
+                    popupContainer.appendChild(popup);
+                
+                    document.body.appendChild(popupContainer);
+                    
+                    const closePopup = () => {
+                        document.body.removeChild(popupContainer);
+                    };
+                    
+                    popupContainer.addEventListener('click', closePopup);
+                    document.addEventListener('keydown', event => {
+                        if (event.key === 'Escape') {
+                        closePopup();
+                        }
+                    });
+                }
+            });
+        });
     } catch (error) {
         console.log(error);
     }
@@ -73,11 +112,50 @@ async function fetchMoviesQuery(){
             movieGrid.innerHTML += 
             `
             <div class="text-center movie-card mb-5">
-                <p class="text-white text-center mb-2 movie-title">${movie.title}</p>
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-100 mx-auto movie-poster">
+                <p class="text-white text-center mb-2 font-bold movie-title">${movie.title}</p>
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-100 movie-poster">
                 <p class="text-white my-2 text-center movie-votes">Votes: ${movie.vote_average} ⭐️</p>
             </div>
-            `
+            `;
+        });
+          
+        const movieCards = document.querySelectorAll('.movie-card');
+        
+        movieCards.forEach(movieCard => {
+            const moviePoster = movieCard.querySelector('.movie-poster');
+            moviePoster.addEventListener('click', () => {
+                const movieTitle = movieCard.querySelector('.movie-title').textContent;
+            
+                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+            
+                if (clickedMovie) {
+                    const popupContent = `
+                        <h2 class="popup-title">${movieTitle}</h2>
+                        <p class="popup-overview">${clickedMovie.overview}</p>
+                    `;
+                    
+                    const popup = document.createElement('div');
+                    popup.className = 'popup';
+                    popup.innerHTML = popupContent;
+                    
+                    const popupContainer = document.createElement('div');
+                    popupContainer.className = 'popup-container';
+                    popupContainer.appendChild(popup);
+                
+                    document.body.appendChild(popupContainer);
+                    
+                    const closePopup = () => {
+                        document.body.removeChild(popupContainer);
+                    };
+                    
+                    popupContainer.addEventListener('click', closePopup);
+                    document.addEventListener('keydown', event => {
+                        if (event.key === 'Escape') {
+                        closePopup();
+                        }
+                    });
+                }
+            });
         });
     } catch (error) {
         console.log(error);
@@ -106,11 +184,50 @@ async function fetchMoreMovies(){
             movieGrid.innerHTML += 
             `
             <div class="text-center movie-card mb-5">
-                <p class="text-white text-center mb-2 movie-title">${movie.title}</p>
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-100 mx-auto movie-poster">
+                <p class="text-white text-center mb-2 font-bold movie-title">${movie.title}</p>
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" class="w-100 movie-poster">
                 <p class="text-white my-2 text-center movie-votes">Votes: ${movie.vote_average} ⭐️</p>
             </div>
-            `
+            `;
+        });
+          
+        const movieCards = document.querySelectorAll('.movie-card');
+        
+        movieCards.forEach(movieCard => {
+            const moviePoster = movieCard.querySelector('.movie-poster');
+            moviePoster.addEventListener('click', () => {
+                const movieTitle = movieCard.querySelector('.movie-title').textContent;
+            
+                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+            
+                if (clickedMovie) {
+                    const popupContent = `
+                        <h2 class="popup-title">${movieTitle}</h2>
+                        <p class="popup-overview">${clickedMovie.overview}</p>
+                    `;
+                    
+                    const popup = document.createElement('div');
+                    popup.className = 'popup';
+                    popup.innerHTML = popupContent;
+                    
+                    const popupContainer = document.createElement('div');
+                    popupContainer.className = 'popup-container';
+                    popupContainer.appendChild(popup);
+                
+                    document.body.appendChild(popupContainer);
+                    
+                    const closePopup = () => {
+                        document.body.removeChild(popupContainer);
+                    };
+                    
+                    popupContainer.addEventListener('click', closePopup);
+                    document.addEventListener('keydown', event => {
+                        if (event.key === 'Escape') {
+                        closePopup();
+                        }
+                    });
+                }
+            });
         });
 
     } catch (error) {
