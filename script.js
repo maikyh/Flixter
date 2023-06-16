@@ -3,6 +3,7 @@ const apiKey = "b00becdd7e29ffe2e96ce18a43b88d3f";
 var pages = 1;
 var currentPreUrl = 1; //1 == now Playing, 2 == searching
 var userInput = "";
+var allMovies = [];
 var submitBtn = document.getElementById("submitBtn");
 var gifsDiv = document.getElementById("gifsDiv");
 var searchInput = document.getElementById("searchInput"); 
@@ -29,6 +30,9 @@ async function fetchMovies() {
         console.log(movies);
         
         movies.forEach(movie => {
+
+            allMovies.push({title: movie.title, desc: movie.overview});
+
             movieGrid.innerHTML += 
             `
             <div class="text-center movie-card mb-5">
@@ -40,18 +44,18 @@ async function fetchMovies() {
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        
+        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
             moviePoster.addEventListener('click', () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
-                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+                const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.overview}</p>
+                        <p class="popup-overview">${clickedMovie.desc}</p>
                     `;
                     
                     const popup = document.createElement('div');
@@ -109,6 +113,9 @@ async function fetchMoviesQuery(){
         const movies = data.results;
     
         movies.forEach(movie => {
+
+            allMovies.push({title: movie.title, desc: movie.overview});
+
             movieGrid.innerHTML += 
             `
             <div class="text-center movie-card mb-5">
@@ -120,18 +127,18 @@ async function fetchMoviesQuery(){
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        
+        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
             moviePoster.addEventListener('click', () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
-                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+                const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.overview}</p>
+                        <p class="popup-overview">${clickedMovie.desc}</p>
                     `;
                     
                     const popup = document.createElement('div');
@@ -181,6 +188,9 @@ async function fetchMoreMovies(){
         const movies = data.results;
 
         movies.forEach(movie => {
+
+            allMovies.push({title: movie.title, desc: movie.overview});
+
             movieGrid.innerHTML += 
             `
             <div class="text-center movie-card mb-5">
@@ -192,18 +202,18 @@ async function fetchMoreMovies(){
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        
+        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
             moviePoster.addEventListener('click', () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
-                const clickedMovie = movies.find(movie => movie.title === movieTitle);
+                const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.overview}</p>
+                        <p class="popup-overview">${clickedMovie.desc}</p>
                     `;
                     
                     const popup = document.createElement('div');
