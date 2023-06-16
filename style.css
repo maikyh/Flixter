@@ -61,3 +61,13 @@
     color: #ff0000;
   }
   
+  /* Additional styles for mobile devices */
+  @media only screen and (max-width: 600px) {
+    .popup {
+      width: 95%;
+      max-width: 95%;
+      height: 90%;
+      max-height: 90%;
+    }
+  }
+  

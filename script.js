@@ -8,6 +8,7 @@ var submitBtn = document.getElementById("submitBtn");
 var searchInput = document.getElementById("search-input");
 var movieGrid = document.getElementById("movies-grid");
 var addMoreMovies = document.getElementById("load-more-movies-btn");
+var homeBtn = document.getElementById("homeBtn");
 
 document.addEventListener("DOMContentLoaded", handleDocument);
 
@@ -304,12 +305,13 @@ async function fetchMoreMovies(){
     }
 }
 
-var homeBtn = document.getElementById("homeBtn");
 homeBtn.addEventListener("click", handleHomeBtn);
 
 function handleHomeBtn(event) {
   event.preventDefault();
   movieGrid.innerHTML = "";
+  currentPreUrl = 1;
+  pages = 1;
   searchInput.value = "";
   fetchMovies();
 }
