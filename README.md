@@ -6,7 +6,7 @@ Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
 
 Estimated time spent: **9** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site]([ADD_LINK_HERE](https://maikyh.github.io/Flixter/))
+Deployed Application (optional): [Flixster Deployed Site]([https://maikyh.github.io/Flixter/](https://maikyh.github.io/Flixter/))
 
 ### Application Features
 
