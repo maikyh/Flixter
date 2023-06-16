@@ -5,9 +5,9 @@ var currentPreUrl = 1; //1 == now Playing, 2 == searching
 var userInput = "";
 var allMovies = [];
 var submitBtn = document.getElementById("submitBtn");
-var searchInput = document.getElementById("searchInput"); 
+var searchInput = document.getElementById("search-input");
 var movieGrid = document.getElementById("movies-grid");
-var addMoreMovies = document.getElementById("load-more-movies-btn"); 
+var addMoreMovies = document.getElementById("load-more-movies-btn");
 
 document.addEventListener("DOMContentLoaded", handleDocument);
 
