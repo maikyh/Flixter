@@ -27,11 +27,10 @@ async function fetchMovies() {
         const response = await fetch(url);
         const data = await response.json();
         const movies = data.results;
-        console.log(movies);
         
         movies.forEach(movie => {
 
-            allMovies.push({title: movie.title, desc: movie.overview});
+            allMovies.push({title: movie.title, desc: movie.overview, id: movie.id});
 
             movieGrid.innerHTML += 
             `
@@ -44,18 +43,30 @@ async function fetchMovies() {
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
-            moviePoster.addEventListener('click', () => {
+            moviePoster.addEventListener('click', async () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
                 const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
+                    const urlMovie = `https://api.themoviedb.org/3/movie/${clickedMovie.id}/videos?api_key=b00becdd7e29ffe2e96ce18a43b88d3f`;
+    
+                    const responseMovie = await fetch(urlMovie);
+                    const dataMovie = await responseMovie.json();
+                    const movieKey = dataMovie.results[0].key;
+
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
                         <p class="popup-overview">${clickedMovie.desc}</p>
+                        <iframe
+                            src="https://www.youtube.com/embed/${movieKey}"
+                            title="${movieTitle}"
+                            class="w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     `;
                     
                     const popup = document.createElement('div');
@@ -114,7 +125,7 @@ async function fetchMoviesQuery(){
     
         movies.forEach(movie => {
 
-            allMovies.push({title: movie.title, desc: movie.overview});
+            allMovies.push({title: movie.title, desc: movie.overview, id: movie.id});
 
             movieGrid.innerHTML += 
             `
@@ -127,18 +138,30 @@ async function fetchMoviesQuery(){
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
-            moviePoster.addEventListener('click', () => {
+            moviePoster.addEventListener('click', async () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
                 const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
+                    const urlMovie = `https://api.themoviedb.org/3/movie/${clickedMovie.id}/videos?api_key=b00becdd7e29ffe2e96ce18a43b88d3f`;
+    
+                    const responseMovie = await fetch(urlMovie);
+                    const dataMovie = await responseMovie.json();
+                    const movieKey = dataMovie.results[0].key;
+
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
                         <p class="popup-overview">${clickedMovie.desc}</p>
+                        <iframe
+                            src="https://www.youtube.com/embed/${movieKey}"
+                            title="${movieTitle}"
+                            class="w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     `;
                     
                     const popup = document.createElement('div');
@@ -179,7 +202,6 @@ function handleAddMoreMovies(event) {
 
 async function fetchMoreMovies(){
     try {
-        
         var url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=${pages}`;
         if(currentPreUrl === 2) url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&page=${pages}&query=${userInput}&include_adult=false`;
 
@@ -189,7 +211,7 @@ async function fetchMoreMovies(){
 
         movies.forEach(movie => {
 
-            allMovies.push({title: movie.title, desc: movie.overview});
+            allMovies.push({title: movie.title, desc: movie.overview, id: movie.id});
 
             movieGrid.innerHTML += 
             `
@@ -202,18 +224,30 @@ async function fetchMoreMovies(){
         });
           
         const movieCards = document.querySelectorAll('.movie-card');
-        console.log(allMovies);
         movieCards.forEach(movieCard => {
             const moviePoster = movieCard.querySelector('.movie-poster');
-            moviePoster.addEventListener('click', () => {
+            moviePoster.addEventListener('click', async () => {
                 const movieTitle = movieCard.querySelector('.movie-title').textContent;
             
                 const clickedMovie = allMovies.find(movie => movie.title === movieTitle);
             
                 if (clickedMovie) {
+                    const urlMovie = `https://api.themoviedb.org/3/movie/${clickedMovie.id}/videos?api_key=b00becdd7e29ffe2e96ce18a43b88d3f`;
+    
+                    const responseMovie = await fetch(urlMovie);
+                    const dataMovie = await responseMovie.json();
+                    const movieKey = dataMovie.results[0].key;
+
                     const popupContent = `
                         <h2 class="popup-title">${movieTitle}</h2>
                         <p class="popup-overview">${clickedMovie.desc}</p>
+                        <iframe
+                            src="https://www.youtube.com/embed/${movieKey}"
+                            title="${movieTitle}"
+                            class="w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     `;
                     
                     const popup = document.createElement('div');
@@ -239,7 +273,6 @@ async function fetchMoreMovies(){
                 }
             });
         });
-
     } catch (error) {
         console.log(error);
     }
