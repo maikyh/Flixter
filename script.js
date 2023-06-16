@@ -55,19 +55,28 @@ async function fetchMovies() {
     
                     const responseMovie = await fetch(urlMovie);
                     const dataMovie = await responseMovie.json();
-                    const movieKey = dataMovie.results[0].key;
-
-                    const popupContent = `
-                        <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.desc}</p>
-                        <iframe
-                            src="https://www.youtube.com/embed/${movieKey}"
-                            title="${movieTitle}"
-                            class="w-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    `;
+                    
+                    var popupContent;
+                    if(dataMovie.results.length === 0){
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                        `;
+                    }
+                    else{
+                        const movieKey = dataMovie.results[0].key;
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                            <iframe
+                                src="https://www.youtube.com/embed/${movieKey}"
+                                title="${movieTitle}"
+                                class="w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                    }
                     
                     const popup = document.createElement('div');
                     popup.className = 'popup';
@@ -150,19 +159,28 @@ async function fetchMoviesQuery(){
     
                     const responseMovie = await fetch(urlMovie);
                     const dataMovie = await responseMovie.json();
-                    const movieKey = dataMovie.results[0].key;
-
-                    const popupContent = `
-                        <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.desc}</p>
-                        <iframe
-                            src="https://www.youtube.com/embed/${movieKey}"
-                            title="${movieTitle}"
-                            class="w-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    `;
+                    
+                    var popupContent;
+                    if(dataMovie.results.length === 0){
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                        `;
+                    }
+                    else{
+                        const movieKey = dataMovie.results[0].key;
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                            <iframe
+                                src="https://www.youtube.com/embed/${movieKey}"
+                                title="${movieTitle}"
+                                class="w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                    }
                     
                     const popup = document.createElement('div');
                     popup.className = 'popup';
@@ -236,19 +254,28 @@ async function fetchMoreMovies(){
     
                     const responseMovie = await fetch(urlMovie);
                     const dataMovie = await responseMovie.json();
-                    const movieKey = dataMovie.results[0].key;
-
-                    const popupContent = `
-                        <h2 class="popup-title">${movieTitle}</h2>
-                        <p class="popup-overview">${clickedMovie.desc}</p>
-                        <iframe
-                            src="https://www.youtube.com/embed/${movieKey}"
-                            title="${movieTitle}"
-                            class="w-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    `;
+                    
+                    var popupContent;
+                    if(dataMovie.results.length === 0){
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                        `;
+                    }
+                    else{
+                        const movieKey = dataMovie.results[0].key;
+                        popupContent = `
+                            <h2 class="popup-title">${movieTitle}</h2>
+                            <p class="popup-overview">${clickedMovie.desc}</p>
+                            <iframe
+                                src="https://www.youtube.com/embed/${movieKey}"
+                                title="${movieTitle}"
+                                class="w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                    }
                     
                     const popup = document.createElement('div');
                     popup.className = 'popup';
