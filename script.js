@@ -5,7 +5,6 @@ var currentPreUrl = 1; //1 == now Playing, 2 == searching
 var userInput = "";
 var allMovies = [];
 var submitBtn = document.getElementById("submitBtn");
-var gifsDiv = document.getElementById("gifsDiv");
 var searchInput = document.getElementById("searchInput"); 
 var movieGrid = document.getElementById("movies-grid");
 var addMoreMovies = document.getElementById("load-more-movies-btn"); 
@@ -303,4 +302,14 @@ async function fetchMoreMovies(){
     } catch (error) {
         console.log(error);
     }
+}
+
+var homeBtn = document.getElementById("homeBtn");
+homeBtn.addEventListener("click", handleHomeBtn);
+
+function handleHomeBtn(event) {
+  event.preventDefault();
+  movieGrid.innerHTML = "";
+  searchInput.value = "";
+  fetchMovies();
 }
