@@ -4,7 +4,7 @@
 
 Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
 
-Estimated time spent: **9** hours spent in total
+Estimated time spent: **11** hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](https://maikyh.github.io/Flixter/)
 
@@ -50,20 +50,12 @@ Deployed Application (optional): [Flixster Deployed Site](https://maikyh.github.
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The last lab was the one that helped me the most. Here, I learned how to fetch movies and call APIs. Thanks to this, I felt prepared to complete all core and stretch features.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would add more information to the pop-ups, make them more aesthetically pleasing, and use a database instead of arrays to retrieve movie information.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
-
-### Open-source libraries used
-
-- Add any links to open-source libraries used in your project.
-
-### Shout out
-
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+I really liked the final result, and I feel proud that I completed all the features on time. However, next time, I will manage my time better to improve its performance and also focus on enhancing the quality of the code. 
