@@ -44,7 +44,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://maikyh.github.
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-[`ADD_EMBEDDED_CODE_HERE`](https://www.loom.com/share/0cf3b292071d4b05a59e4de039a9ac59?sid=879f2cae-8440-4c29-854b-40289d08b478)
+https://www.loom.com/share/0cf3b292071d4b05a59e4de039a9ac59?sid=879f2cae-8440-4c29-854b-40289d08b478
 
 ### Reflection
 
