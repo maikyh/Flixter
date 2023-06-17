@@ -8,7 +8,7 @@ var submitBtn = document.getElementById("submitBtn");
 var searchInput = document.getElementById("search-input");
 var movieGrid = document.getElementById("movies-grid");
 var addMoreMovies = document.getElementById("load-more-movies-btn");
-var homeBtn = document.getElementById("homeBtn");
+var homeBtn = document.getElementById("close-search-btn");
 
 document.addEventListener("DOMContentLoaded", handleDocument);
 
