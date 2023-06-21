@@ -48,12 +48,14 @@ Deployed Application (optional): [Flixster Deployed Site](https://maikyh.github.
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The last lab was the one that helped me the most. Here, I learned how to fetch movies and call APIs. Thanks to this, I felt prepared to complete all core and stretch features.
+The first lab helped me a lot in recalling everything I previously learned about HTML, CSS, and JavaScript, such as how to initialize the document, connect the index.html file with CSS and JS files. The third lab was the one that taught me how to fetch data from a public API, how to handle the data, find the endpoints, manipulate them, and display them in a grid view. In my opinion, this lab benefited me the most because the project also involved similar concepts of calling an API, in this case for movies, and displaying them in a grid. Thanks to this, I was able to complete all the core and stretch features.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time, I would add more information to the pop-ups, make them more aesthetically pleasing, and use a database instead of arrays to retrieve movie information.
+If I had more time, I would have spent more time designing how to store movie information. Every time I clicked the "Add More Movies" button, it added more information. However, when I wanted to view the details of a movie that was no longer on the current page, nothing loaded. So, I had to create an array and push all the information back, which was not the most efficient solution. In a future iteration, I would handle a database where I could store all the movies only once, without repetition.
+Additionally, I would improve the aesthetics and user interface of the pop-ups. I would choose slightly darker colors, clearer font styles, and give different shapes to the backgrounds. I would also make the text more prominent and make the pop-ups more compact, especially for mobile devices.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I really liked the final result, and I feel proud that I completed all the features on time. However, next time, I will manage my time better to improve its performance and also focus on enhancing the quality of the code. 
+In general, everything turned out well as I completed all the core and stretch features on time. However, there is always room for improvement. I would have liked to have better control over my time to implement enhancements, such as storing data in a database. This could have been better managed if I had improved my time management skills because there were moments when time slipped away from me, and it ended up being much later than expected.
+To improve this, I will make note of the time, work intensely for a set period, and then take short breaks at regular intervals. This way, I can prioritize intensity over quantity and complete projects more efficiently, allowing more time for final touches and improvements.
